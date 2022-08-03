@@ -1,17 +1,13 @@
 const express = require('express');
 const app = express();
+const cors = require('cors')
 
-app.engine('.hbs', hbs());
-app.set('view engine', '.hbs');
 
-app.use(express.static(path.join(__dirname, '/public')));
-
-app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
 });
 
-app.post('/contact/send-message', upload.single('image'), (req, res) => {
+app.post('/contact/send-message', (req, res) => {
 
 });
 
