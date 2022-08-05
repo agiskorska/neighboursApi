@@ -1,17 +1,19 @@
 DROP TABLE IF EXISTS houses;
 CREATE TABLE houses (
-	houseId SERIAL PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
 	houseNumber INT,
 	streetName VARCHAR ( 50 ),
-	postcode VARCHAR ( 8 ),
+	postcode VARCHAR ( 15 ),
 	city VARCHAR ( 20 ),
-	ownerId INT NOT NULL
+	ownerId INT 
 );
 
 DROP TABLE IF EXISTS owners;
 CREATE TABLE owners (
-    ownerId SERIAL PRIMARY KEY,
-    houseId REFERENCES houses.houseId,
-    nOfOccupants INT,
+    id SERIAL PRIMARY KEY,
+	firstName VARCHAR (50),
+	lastName VARCHAR (50),
+    houseId INT,
+    noOfOccupants INT,
     age INT
 );
